@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>League Champ Picker</title>
+    <desc>Randomly picks a League of Legends Champion for you.</desc>
+    <style>
+      body {
+        background-color: #000000;
+      }
+      div {
+        /* CSS is hard and boring, so I stole this part. */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+      #characterTitle {
+        text-align: center;
+        font-family: serif;
+        font-size: 50px;
+        color: white;
+      }
+      #championImage {
+        border: 3px dashed white;
+        border-radius: 20px;
+        width: 1214px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="characterTitle">Welcome!</h1>
+      <h2><input type="image" src="" id="championImage" onclick="randNewChamp()" /></h2>
+    </div>
+    <script src="Champion Generator.js"></script>
+  </body>
+</html>
