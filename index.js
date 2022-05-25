@@ -16,14 +16,27 @@ function randNewChamp() {
 
 function displayChampion(name) {
   console.log(currentChamp);
-  //Modifies Names to be used in Image Get
-  nameFixed = name.replace(" ", "").replace(`'`, ``).replace(".", "");
-  if (name == "Kai'Sa" || name == "Kha'Zix" || name == "Vel'Koz" || name == "Cho'Gath" || name == "LeBlanc") {
-    nameFixed = nameFixed.charAt(0) + nameFixed.slice(1).toLowerCase();
-  } else if (name == "Wukong") {
-    nameFixed = "MonkeyKing";
-  } else if (name == "Renata Glasc") {
-    nameFixed = "Renata";
+  //Modifies Display Names to match what is needed for insertion into Image Links
+  switch (name) {
+    case "Kai'Sa":
+    case "Kha'Zix":
+    case "Vel'Koz":
+    case "Cho'Gath":
+    case "LeBlanc":
+      nameFixed = nameFixed.charAt(0) + nameFixed.slice(1).toLowerCase();
+      break;
+    case "Dr. Mundo":
+      nameFixed = name.replace(". ", "");
+      break;
+    case "Wukong":
+      nameFixed = "MonkeyKing";
+      break;
+    case "Renata Glasc":
+      nameFixed = "Renata";
+      break;
+    default:
+      nameFixed = name.replace(" ", "").replace(`'`, ``);
+      break;
   }
   //Gets Image from LoL official site, updates displayed information
   let image = document.getElementById("championImage");
