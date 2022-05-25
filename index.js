@@ -53,12 +53,14 @@ function displayChampion(name) {
 document.onkeyup = function (event) {
   switch (event.key) {
     case "ArrowLeft":
+    case "ArrowDown":
       if (currentChamp != 0) {
         currentChamp = currentChamp - 1;
         displayChampion(pastRandChamp[currentChamp]);
       }
       break;
     case "ArrowRight":
+    case "ArrowUp":
       if (currentChamp != pastRandChamp.length - 1) {
         currentChamp = currentChamp + 1;
         displayChampion(pastRandChamp[currentChamp]);
