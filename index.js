@@ -43,6 +43,7 @@ function displayCurrentChampion() {
       image.src = insertNameIntoLink(championName);
       break;
   }
+  document.getElementById("currentChamp").innerHTML = currentChamp + 1 + "/" + previousChampions.length;
   console.log(document.getElementById("championImage").width * document.getElementById("championImage").height + " " + championName);
 }
 
@@ -52,7 +53,6 @@ function insertNameIntoLink(nameToInsert) {
 
 function updateText() {
   document.getElementById("characterTitle").innerHTML = championName;
-  document.getElementById("currentChamp").innerHTML = currentChamp + 1 + "/" + previousChampions.length;
 }
 
 document.onkeyup = function (event) {
