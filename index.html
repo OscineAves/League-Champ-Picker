@@ -4,45 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta description="Randomly picks a League of Legends Champion for you." />
     <title>League Champ Picker</title>
-    <desc>Randomly picks a League of Legends Champion for you.</desc>
     <style>
       * {
-        margin: 5px;
-        user-select: none;
-      }
-      body {
         background-color: #000000;
-        overflow: hidden;
+        user-select: none;
+        margin: 7px;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
       #characterTitle {
-        text-align: center;
+        font-size: 3em;
         font-family: serif;
-        font-size: 50px;
+        font-style: italic;
         color: white;
       }
       #currentChamp {
-        text-align: center;
+        font-size: 1.7em;
         font-family: serif;
-        font-size: 30px;
+        font-style: italic;
         color: white;
       }
       #championImage {
         border: 3px dashed white;
         border-radius: 20px;
-        width: 1213px;
-        height: 716px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 95%;
       }
     </style>
   </head>
   <body>
     <div>
-      <h1 id="characterTitle">&#8205;</h1>
-      <input type="image" src="0" id="championImage" alt="Image of current Champion" onclick="getRandomChampion()" onload="displayChampionName()" />
-      <h2 id="currentChamp">1/1</h2>
+      <h1 id="characterTitle">Loading. . .</h1>
+      <input type="image" src="0" id="championImage" alt="Image of current Champion" onclick="getRandomChampion()" onload="updateText()" />
+      <h1 id="currentChamp">1/1</h1>
     </div>
     <script src="index.js"></script>
   </body>
