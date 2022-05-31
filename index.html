@@ -8,40 +8,47 @@
     <title>League Champ Picker</title>
     <style>
       * {
-        background-color: #000000;
-        user-select: none;
         margin: 7px;
       }
-      div {
+      body {
+        font-family: serif;
+        color: white;
+        background-color: #000000;
+        user-select: none;
+      }
+      .flex {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
       }
-      #characterTitle {
+      #championDisplay {
+        flex-direction: column;
         font-size: 3em;
-        font-family: serif;
         font-style: italic;
-        color: white;
       }
-      #currentChamp {
-        font-size: 1.7em;
-        font-family: serif;
-        font-style: italic;
-        color: white;
+      #counterDisplay {
+        flex-direction: row;
+        font-size: 1.2em;
       }
       #championImage {
         border: 3px dashed white;
         border-radius: 20px;
         max-width: 95%;
       }
+      a {
+        color: white;
+      }
     </style>
   </head>
   <body>
-    <div>
-      <h1 id="characterTitle">Loading. . .</h1>
-      <input type="image" src="0" id="championImage" alt="Image of current Champion" onclick="getRandomChampion()" onload="updateText()" />
-      <h1 id="currentChamp">1/1</h1>
+    <div id="championDisplay" class="flex">
+      <a href="" target="_blank" id="championName">Loading. . .</a>
+      <input type="image" src="0" id="championImage" alt="Image of current Champion" onclick="displayChampion(getRandomChampion())" />
+    </div>
+    <div id="counterDisplay" class="flex">
+      <h2 id="prevChampButton" onclick="gotoPreviousChampion()">&lt;</h2>
+      <h1 id="championCounter">1/1</h1>
+      <h2 id="nextChampButton" onclick="gotoNextChampion()">&gt;</h2>
     </div>
     <script src="index.js"></script>
   </body>
